@@ -1,4 +1,4 @@
-class Dustbin{
+ class Dustbin{
     constructor(x,y){
         
        this.image=loadImage("dustbingreen.png");
@@ -26,7 +26,7 @@ class Dustbin{
 
         display(){
 
-         this.image(this.image,this.body.position.x,this.body.position.y,this.width,this.height);
+        
 
 
 
@@ -36,29 +36,30 @@ class Dustbin{
 
             push();
             translate(posLeft.x,posLeft.y);
-            rectMode(CENTER)
+            //rectMode(CENTER)
             angleMode(RADIANS);
             fill(255,0,0);
             rotate(this.angle);
-            rect(0,0,this.wallThickness,this.dustbinHeight);
+            //rect(0,0,this.wallThickness,this.dustbinHeight);
             pop();
 
             push();
             translate(posRight.x,posRight.y);
-            rectMode(CENTER)
+            //rectMode(CENTER)
             angleMode(RADIANS);
             fill(255,0,0);
             rotate(-1*this.angle);
-            rect(0,0,this.wallThickness,this.dustbinHeight);
+           // rect(0,0,this.wallThickness,this.dustbinHeight);
             pop();
 
             push();
             translate(posBottom.x,posBottom.y);
-            rectMode(CENTER)
+           // rectMode(CENTER)
             angleMode(RADIANS);
             fill(255,0,0);
-            rotate(this.angle);
-            rect(0,0,this.dustbinWidth,this.wallThickness);
+          //  rotate(this.angle);
+          imageMode(CENTER);
+            image(this.image,0,-this.dustbinHeight/2,this.dustbinWidth,this.dustbinHeight);
             pop();
 
         }
